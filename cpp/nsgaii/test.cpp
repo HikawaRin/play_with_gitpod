@@ -11,7 +11,7 @@ using std::vector;
 int main() {
     int cnt = 2;
     int ind_cnt = 48, obj_cnt = 4;
-    const double constr[] = {160, -30, 0, 0};
+    const double constr[] = {170, -41, 48, 74};
     NSGAII_0X::Param p = NSGAII_0X::Param(1, obj_cnt, ind_cnt);
     NSGAII_0X::NSGAIIAble *ptr = NSGAII_0X::GetInstance(p); ptr->Init();
     for (int pro = 0; pro < 1; ++pro) { ptr->SetPropertyBoundByIndex(pro, -1, 1); }

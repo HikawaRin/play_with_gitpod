@@ -70,7 +70,7 @@ int CheckDominance(Individual a, Individual b){
     }else{
       // 两个个体都没有违反约束
       int flag_a = 0, flag_b = 0;
-      for (int i = 0; i < a.objs.size(); i++){
+      for (size_t i = 0; i < a.objs.size(); i++){
         if (a.objs[i] < b.objs[i]){
           flag_a = 1;
         }
@@ -166,7 +166,7 @@ void NSGAII::decode(){
         }
       }else{
         // Is negative number
-        for (int j = 1; j < this->inds_temp[ind].genes[i].size(); j++){
+        for (size_t j = 1; j < this->inds_temp[ind].genes[i].size(); j++){
           int g = (this->inds_temp[ind].genes[i][j] == 0)? 1: 0;
           value = value * 2 + g;
         }
@@ -201,9 +201,7 @@ void NSGAII::crossover(){
       if (dis(gen) <= this->param.cross_rate){
         size_t point = (size_t)(dis(gen) * (cind.genes[j].size() - 1));
         for (; point < cind.genes[j].size(); ++point){
-          int bit = cind.genes[j][point];
-          cind.genes[j][point] = pind.genes[j][point];
-          pind.genes[j][point] = cind.genes[j][point];
+          std::swap(cind.genes[j][point], pind.genes[j][point]);
         }
       }
     }// for (size_t j = 0; j < cind.genes.size(); ++j)
