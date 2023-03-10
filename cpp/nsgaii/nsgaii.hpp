@@ -56,8 +56,9 @@ class NSGAIIAble{
   // 
   // virtual bool IsConverge()=0;
 
-  static NSGAIIAble *GetInstance(Param p);
 };// class NSGAII
+
+extern NSGAIIAble *GetInstance(Param p);
 
 } // namespace NSGAII_0X
 #endif// NSGAII_0X_SRC_NSGAII_HPP

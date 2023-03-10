@@ -417,6 +417,8 @@ void NSGAII::log(Individual i){
 
 }
 
+NSGAIIAble *GetInstance(Param p) { return (NSGAIIAble *)new NSGAII(p); }
+
 /*
 #define DLLEXPORT __declspec(dllexport)
 extern "C" DLLEXPORT NSGAII *GetInstance(Param p){
